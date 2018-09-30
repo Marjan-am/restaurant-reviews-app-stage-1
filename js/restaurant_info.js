@@ -66,21 +66,17 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
-  name.setAttribute('tabindex', '0');
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
-  address.setAttribute('tabindex', '0');
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.setAttribute('tabindex', '0');
   image.alt = `${restaurant.name} Restaurant image`;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
-  cuisine.setAttribute('tabindex', '0');
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -95,7 +91,6 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
-  hours.setAttribute('tabindex', '0');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
